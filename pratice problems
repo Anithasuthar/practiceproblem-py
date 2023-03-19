@@ -1,0 +1,279 @@
+#Que1. Create a list of no's 1 to 10. Print a updated list by adding 5,15 no's to the list. Don't modify original list
+'''
+x = [1,2,3,4,5,6,7,8,9,10]
+y = x
+print(y)
+y.append(5)
+print(y)
+y.append(15)
+print(y)
+'''
+'''
+#list and tuple
+low = [1,2,3]
+high = [4,5]
+
+ranking = (low, high)
+
+print(high)
+high.append(6)
+print(ranking)
+'''
+
+# arthmetic operators
+'''
+a = 10
+b = 20
+
+print("addition :", a + b)
+print("subtraction :", a - b)
+print("multiplation :", a * b)
+print("divison :", a / b)
+print("modulus :", a % b)
+print("exponentiation :", a**b)
+print("flooe division :",a//b)
+'''
+
+#comparison operater ( < , > , == , <= , >=,, !=)
+'''
+num1 = 100
+num2 = 200
+
+print( num1 == num2)
+print( num1 > num2)
+print( num1 < num2)
+print( num1 <= num2)
+print( num1 >= num2)
+print( num1 != num2)
+'''
+
+#identity opertiors (is , is not)
+'''
+num1 = 100
+num2 = 200
+
+print(num1 == num2)
+print(num1 is num2)
+print(num1 is not num2)
+'''
+
+# == compare values
+# is compare memory location
+'''
+a = [1, 2, 3]
+a1 = [1, 2, 3]
+
+print( a == a1)
+print ( a is a1)
+'''
+#-----------------------------------------------------------------------------------------------------------------------
+#Create a complex no 2.25 + 7.00 i . Write a code to get real and imaginary data in below format - "Real Part of given
+# complex no is : " in next line "Imag part of given complex  no is : ".        
+#Also, Check if real and imag part of complex no is integer or not.
+'''
+a = 2.25 + 7.00 
+
+real_part= a.real
+imag_part= a.imag
+
+print("real part of given complex number is :", real_part)
+print("imag part of given complex number is :", imag_part)
+
+print(real_part.is_integer())
+print(imag_part.is_integer())
+'''
+
+#1Write a Python program to print a dictionary whose keys should be the alphabet from a-z and the value should be corresponding ASCII values
+'''
+def last(n):
+     return n[-1]
+def sort(tuples):
+     return sorted(tuples, key = last)
+
+a= input("Enter a list of tuples:")
+print("sorted:")
+print(sort(a))
+
+
+# create the dict whose alphabet from a-z
+
+dict = {}
+
+for i in range (65, 65 + 26):
+    dict[chr(i)] = i
+    
+print(dict)
+'''
+
+#Write a Python program to guess a number between 1 and 9.
+
+# Note : User is prompted to enter a guess. If the user guesses wrong then the prompt appears again until the guess is 
+# correct, on successful guess, user will get a "Well guessed!" message, and the program will exit.
+'''
+a= int(input("Enter a guess"))
+
+while (a>9) or (a<1) :
+    a=int(input("Enter a guess:"))
+else:
+print("Well guessed")
+'''
+# Write a Python program to calculate a dog's age in dog years. Go to the editor
+# Note: For the first two years, a dog year is equal to 10.5 human years. After that, each dog year equals 4 human years.
+# Expected Output:
+
+# Input a dog's age in human years: 15                                    
+# The dog's age in dog's years is 73
+'''
+age = int(input("Input a dog's age in human years: "))
+
+if age < 0:
+	print("Age must be positive number.")
+	exit()
+elif age <= 2:
+	age = age * 10.5
+else:
+	age = 21 + (age - 2)*4
+
+print("The dog's age in dog's years is", age)
+''' 
+
+# Write a Python program to construct the following pattern, using a nested loop number. Go to the editor
+# Expected Output:
+
+# 1
+# 22
+# 333
+# 4444
+# 55555
+# 666666
+# 7777777
+# 88888888
+# 999999999
+'''
+for i in range(10):
+    print(str(i) * i)
+'''
+
+# Python program to find the factorial of a number.
+
+# 4 = 4*3*2*1 = 24  -> factorial of 4 = 21
+# factorial of 5 -> 5*4*3*2*1 = 120
+'''
+# To take input from the user
+num = int(input("Enter a number: "))
+
+factorial = 1
+
+# check if the number is negative, positive or zero
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial)
+'''
+# alternative
+'''
+num = int(input("enter a number:"))
+
+def fact(num):
+    if num ==1:
+        f = 1
+    elif num ==0:
+        f = 1
+    else:
+        f = num * fact(num -1)
+
+    return f   
+              
+result =fact(num)
+print("factorial of given number is:",result)
+'''
+
+# Python program to display the sum of n numbers using a list
+'''
+numlist = input('enter the elements of list:').split()
+intlist =[]
+
+for i in numlist:
+    intlist.append(int(i))
+
+print(numlist)
+print(intlist)    
+
+sum = 0
+for i in intlist:
+    sum+=i
+print("sum of num in list:",sum) 
+'''
+
+#alternative approch
+'''
+numbers = []
+num = int(input("how many numbers : "))
+
+for n in range(num):
+    x = int(input("enter a num :"))
+    numbers.append(x)
+
+print("sum of given numbers is :",sum(numbers))
+'''
+
+#Python program to find the odd numbers in an array
+# sample input : numbers = [8,3,1,6,2,4,5,9]
+# output : 4
+'''
+numbers = [8,3,1,6,2,4,5,9]
+
+oddcount = 0
+
+# iterating each number in list
+for num in numbers:
+  if (num % 2 != 0):
+       oddcount += 1 
+
+print("count of odd numbers is :",oddcount)
+'''
+
+# python program to find the largest number in a list without using built-in functions
+'''
+mylist = [2 ,3, 4, 5,8,1,2,3,4,9]
+big = mylist[0]
+position =0
+
+
+for i in range(len(mylist)):
+    if (mylist[i]> big):
+        position = i
+
+print('The largest number in list is :', big, "and position is : ",position)
+'''
+# python program to check wether a string is palindrome or not
+'''
+def rev(string1):
+    return string1[::-1]
+
+def ispalindrome(string1):
+    reversestring = rev(string1)
+    if string1 == reversestring:
+        return True
+    else:
+        return False
+    
+num = input("input a number :")
+result = ispalindrome(num)
+
+if result:
+    print("string is Plaindrome")
+else:
+    print("string is NOT Palindrome")    
+'''
+
+
+
+
+
+
+    
